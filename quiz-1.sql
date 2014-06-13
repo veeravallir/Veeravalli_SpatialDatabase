@@ -48,7 +48,7 @@ VALUES
 
 SELECT * FROM `Planets`;
 
-DESCRIBE ` Planets ` ;
+DESCRIBE `Planets` ;
 
 
 SELECT * FROM `Probes` ; 

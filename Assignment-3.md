@@ -177,6 +177,8 @@ function sql_to_coordinates($blob)
 
 ### db_connect.php 
 
+~~~ 
+
 
 <?
 // Create connection
@@ -195,6 +197,7 @@ function sql_to_coordinates($blob)
 
 ### functions.php 
 
+~~~
 
 <?php
 

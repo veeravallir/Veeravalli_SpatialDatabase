@@ -1,19 +1,14 @@
 SHP file  :   
 
-A shapefile is a simple, nontopological format for storing the geometric location and attribute information of 
-geographic features. 
-Geographic features in a shapefile can be represented by points, 
-lines, or polygons (areas). The workspace containing shapefiles may also contain dBASE tables, 
-which can store additional attributes that can be joined to a shapefile's features.
+The shapefile is in fact a grouping of several files formatted to represent different aspects of geodata:
+.shp — shape format; the feature geometry itself.
+.shx — shape index format; a positional index of the feature geometry to allow seeking forwards and backwards quickly.
+.dbf — attribute format; columnar attributes for each shape, in dBase IV format.
 
 
 OSM File   : 
 
-The OpenStreetMap data model is a powerful yet simple way to represent geographic information.
- Understanding the data model enables you to interact with OpenStreetMap data in its raw form so that you can manipulate
- it into formats that are more useful for what you're trying to do. You'll want to understand the data model if you are 
- interested in writing a map editor, converting the raw OpenStreetMap data into a format for use in an application, 
- or if any of the existing software tools don't provide functionality that you want.
+OpenStreetMap data files are traditionally distributed in an XML format representing the node, way, and relation concepts using a simple schema. Without compression, this XML format can be extremely large, so it is usually distributed using an efficient compression algorithm like gzip or bz2. Most of the tools designed to work with the OSM XML data format can also handle the compressed XML.
 
 GeoJSON FIle : 
 
@@ -27,10 +22,9 @@ GeoJSON supports the following geometry types: Point, LineString, Polygon, Multi
 
 GPX       : 
 
-GPX (the GPS eXchange Format) is a data format for exchanging GPS data between programs,
- and for sharing GPS data with other users. Unlike other data files, which can only be understood by the programs
- that created them, GPX files actually contain a description of what's inside them, allowing anyone to create a program
- that can read the data within.
+GPX (the GPS Exchange Format) is a light-weight XML data format for the interchange of GPS data (waypoints, routes, and tracks) between applications and Web services on the Internet.
+
+OGR has support for GPX reading (if GDAL is build with expat library support) and writing.
 
 
 KML      : 
@@ -38,11 +32,7 @@ KML      :
 
 Keyhole Markup Language (KML) is an XML-based markup language designed to annotate and overlay visualizations 
 on various two-dimensional, Web-based online maps or three-dimensional Earth browsers (such as Google Earth).
- In fact, KML was initially developed for use with Google Earth; because that project was originally named Keyhole, 
- as was the company that undertook this work, the related markup language followed suit. When Google acquired Keyhole in 2004, 
- that project came with it and eventually became Google Earth. The "keyhole" moniker is a reference to the original KH military
- reconnaissance satellites first launched in the mid-1970s that took the very first "eye-in-the-sky" photographs so commonly viewed
- within Google Earth and other geobrowsers. 
+ In fact, KML was initially developed for use with Google Earth; 
 
 
  NMEA    : 
@@ -63,22 +53,21 @@ on various two-dimensional, Web-based online maps or three-dimensional Earth bro
 QGIS      :   
 
 
-QGIS understands three major forms of data. Two of these are spatial (ie, they contain information allows it to be shown in space) and the third contains no spatial data (" aspatial data")
-
-The two spatial data types are:
-Vector data. Vector data can be drawn by lines of varying lengths; that is points, lines or polygons. 
-In QGIS vector files can only contain one of these three types in a file.
-Raster data. These are images, jpg, tif, etc. These files are accompanied by or contain information that allows
-them to be shown in space. 
+QGIS understands three major forms of data. Two of these are spatial (ie, they contain information allows it to be shown in space) and the third contains no spatial data (" aspatial data").
+In QGIS, Add VECTOR DATA and under BROWSE, set files of type to "Keyhole Markup Language (KML)"
 
 
-GPS BAREL  : 
 
-GPSBabel is an easy-to-use program that haa two main uses:
-1. Delorme users can use it to collapse POI's to a small red dot above a user-specified Draw Level.
-2. For all users, GPSBabel will let you convert almost any map format file to almost any other map format file.
- Owners of stand-alone GPS devices (or other map software programs) that have the ability to import map files can easily
- convert a map file to the format required for their device.
- 
+GPS BABEL  : 
+
+This format can 
+
+read and write tracks
+
+read and write routes
+
+This format has the following options: timeadj .
+
+FAI/IGC Data File -- Used by the international gliding community to record gliding flights. IGC files can be converted to and from tracks representing recorded flights, and routes representing task declarations in other formats.
 
 

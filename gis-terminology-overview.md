@@ -174,7 +174,6 @@ Their intersection is not equal to either of the two given geometries .
 Returns 1 or 0 to indicate whether g1 is spatially within g2. This tests the opposite relationship as Contains().
  
  
- 
 4. Overlaps(g1,g2)  : 
 
 Returns 1 or 0 to indicate whether g1 spatially overlaps g2.

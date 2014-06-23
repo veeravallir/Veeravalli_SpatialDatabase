@@ -11,7 +11,7 @@ File Extensions
 
 The shapefile is in fact a grouping of several files formatted to represent different aspects of geodata: .shp — shape format; the feature geometry itself. .shx — shape index format; a positional index of the feature geometry to allow seeking forwards and backwards quickly. .dbf — attribute format; columnar attributes for each shape, in dBase IV format.
 
-2. OSM File :
+2.OSM File :
 
 OpenStreetMap data files are traditionally distributed in an XML format representing the node, way, and relation concepts using a simple schema. Without compression, this XML format can be extremely large, so it is usually distributed using an efficient compression algorithm like gzip or bz2. Most of the tools designed to work with the OSM XML data format can also handle the compressed XML.
 

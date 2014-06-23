@@ -62,7 +62,7 @@ geographic information systems (GIS) application that provides data viewing, edi
 GPSBabel : 
 
 GPSBabel is a cross-platform, free software to transfer routes, tracks, and waypoint data to and from consumer GPS units, 
-and to convert between over a hundred types of GPS data formats.[1] It has a command-line interface and a graphical interface 
+and to convert between over a hundred types of GPS data formats. It has a command-line interface and a graphical interface 
 for Windows, OS X, and Linux users.
 
 
@@ -74,6 +74,10 @@ GDAL is a translator library for raster and vector geospatial data formats that 
 
 
 
+
+
+
+
 ~~~
 
 Definitions  
@@ -81,20 +85,23 @@ Definitions
 ~~~
 
 
+
+
 Point  :  
 
 A Point is a geometry that represents a single location in coordinate space.
  
-Curve   : 
+ 
+Curve   :
+
 A Curve is a one-dimensional geometry, usually represented by a sequence of points.
 Particular subclasses of Curve define the type of interpolation between points. Curve is a noninstantiable class.
+ 
  
 LineString : 
 
 A LineString is a Curve with linear interpolation between points.
-
 LineString Examples
-
 On a world map, LineString objects could represent rivers.
 In a city map, LineString objects could represent streets.
 
@@ -127,6 +134,10 @@ It is defined by a single exterior boundary and zero or more interior boundaries
 where each interior boundary defines a hole in the Polygon.
 
 
+
+
+
+
 ~~~
 
 Relationships
@@ -139,7 +150,7 @@ The MySQL implementation uses minimum bounding rectangles, so these functions re
 the corresponding MBR-based functions. The return values 1 and 0 indicate true and false, respectively.
  
  
- Touches(g1,g2)   : 
+Touches(g1,g2)   : 
 
 Returns 1 or 0 to indicate whether g1 spatially touches g2. 
 Two geometries spatially touch if the interiors of the geometries do not intersect,
@@ -166,4 +177,4 @@ Returns 1 or 0 to indicate whether g1 is spatially within g2. This tests the opp
 Overlaps(g1,g2)  : 
 
 Returns 1 or 0 to indicate whether g1 spatially overlaps g2.
- The term spatially overlaps is used if two geometries intersect and their intersection results in a geometry of the same dimension but not equal to either of the given geometries.
+The term spatially overlaps is used if two geometries intersect and their intersection results in a geometry of the same dimension but not equal to either of the given geometries.

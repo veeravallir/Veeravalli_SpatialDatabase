@@ -110,6 +110,26 @@ function addPolygon(obj,Color) {
 function addLine(obj){
     
 	
+	var LineStringCoords = [];
+    
+    for (var i in obj){
+        for(var j=0;j<obj[i].length;j++){
+            var latlng = new google.maps.LatLng(obj[i][j][1],obj[i][j][0]);
+            LineStringCoords.push(latlng);
+        }
+    }
+
+
+    var LineString = new google.maps.Polyline({
+         path: flightPlanCoordinates,
+		geodesic: true,
+		strokeColor: '#FF0000',
+		strokeOpacity: 1.0,
+		strokeWeight: 2,
+        map: map
+    });
+
+    LineStringCoords.push(LineString); //Add LineString to global array of LineStringCoords
 	
 }
 

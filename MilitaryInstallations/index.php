@@ -13,7 +13,7 @@ if(sizeof($_POST)>0){
 	$sql = "
 	SELECT fullname, latitude, longitude,
 		   69*haversine(latitude,longitude,latpoint, longpoint) AS distance_in_miles
-	 FROM installations2
+	 FROM military_installations
 	 JOIN (
 		 SELECT  {$_POST['lat']}  AS latpoint,  {$_POST['lng']} AS longpoint
 	   ) AS p
@@ -79,7 +79,7 @@ if(sizeof($_POST)>0){
 				if($numberOfbases<$_POST['basenumber']){
 				
 					$result1 = $db->query("SELECT asText(SHAPE) as border
-																	  FROM `installations2`
+																	  FROM `military_installations`
 																	  WHERE fullname = '{$row['fullname']}'");
 					
 					$Result = $result1->fetch_assoc();
@@ -94,6 +94,7 @@ if(sizeof($_POST)>0){
                          echo"// Define the LatLng coordinates for the polygon's path.\n";
                          array_shift($CoordsArray[$i]);
                          $line=0;
+						 
                          foreach($CoordsArray[$i] as $c){
                                 $lat = $c['lat'];
                                 $lng = $c['lng'];
